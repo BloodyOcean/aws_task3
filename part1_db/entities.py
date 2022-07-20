@@ -165,3 +165,7 @@ class DbServer:
         res = self.session.query(Card).all()
         logging.info(f'Records from cards table retrieved')
         return res
+
+    def __del__(self):
+        self.session.close()
+        self.engine.dispose()

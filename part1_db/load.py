@@ -58,10 +58,8 @@ def load_transactions():
     existing_cards = server.get_cards()
 
     for card in existing_cards:
-        print(card)
-
         if card.isvalid():
-            for i in range(5):
+            for i in range(random.randint(0, 1)):
                 transaction = Transaction(card_no=card.card_no, last_session=last_session)
                 card.amount += transaction.value
                 card.last_used_on = datetime.datetime.now()
