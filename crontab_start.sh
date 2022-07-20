@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pem_path = $1
-echo $pem_path
+PEM_PATH = $1
+echo $PEM_PATH
 
 #install necessary packages
 sudo apt-get update
