@@ -11,7 +11,7 @@ sudo apt-get install openjdk-8-jre
 sudo apt-get install awscli
 sudo apt-get install cron
 sudo apt-get install unzip
-udo apt-get install libmysqlclient-dev
+sudo apt-get install libmysqlclient-dev
 
 #create folder for crontab logs
 mkdir /tmp/crontab_logs
