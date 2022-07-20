@@ -18,10 +18,10 @@ class SparkManager:
                                                                          'DbInfo',
                                                                          'connection_string_jdbc')
 
-        self.connector = "aws_task3/part2_spark/mariadb-java-client-3.0.6.jar," \
-                         "aws_task3/part2_spark/aws-java-sdk-bundle-1.11.1026.jar," \
-                         "aws_task3/part2_spark/hadoop-aws-3.3.3.jar," \
-                         "aws_task3/part2_spark/hadoop-common-3.3.3.jar "
+        self.connector = "~/aws_task3/part2_spark/mariadb-java-client-3.0.6.jar," \
+                         "~/aws_task3/part2_spark/aws-java-sdk-bundle-1.11.1026.jar," \
+                         "~/aws_task3/part2_spark/hadoop-aws-3.3.3.jar," \
+                         "~/aws_task3/part2_spark/hadoop-common-3.3.3.jar "
 
         logging.info('Creating Spark configuration')
         self.conf = SparkConf()

@@ -8,6 +8,7 @@ sudo apt-get update
 sudo apt-get install python3
 sudo apt-get install python3-pip
 sudo apt-get install openjdk-8-jre
+sudo apt-get install openjdk-8-jdk
 sudo apt-get install awscli
 sudo apt-get install cron
 sudo apt-get install unzip
