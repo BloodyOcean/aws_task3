@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PEM_PATH = $1
-echo $PEM_PATH
+echo $0
+echo $1
 
 #install necessary packages
 sudo apt-get update
@@ -19,7 +19,7 @@ mkdir /tmp/crontab_logs
 #install necessary dependecies
 pip install -r requirements.txt
 
-sudo mv $pem_path .
+sudo mv $1 .
 
 wget -P ./part2_spark https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.1026/aws-java-sdk-bundle-1.11.1026.jar
 
