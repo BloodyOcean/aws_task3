@@ -13,13 +13,15 @@ class SparkManager:
         self.config_helper = ConfigReader()
         config_helper_db = ConfigReader()
 
-        self.jdbc_connection = config_helper_db.get_value_from_s3_bucket('task3-files',
-                                                                         'configs/dbconf.ini',
+        self.jdbc_connection = config_helper_db.get_value_from_s3_bucket('./task3-files',
+                                                                         './configs/dbconf.ini',
                                                                          'DbInfo',
                                                                          'connection_string_jdbc')
 
-        self.connector = "mariadb-java-client-3.0.6.jar,aws-java-sdk-bundle-1.11.1026.jar,hadoop-aws-3.3.3.jar," \
-                         "hadoop-common-3.3.3.jar "
+        self.connector = "aws_task3/part2_spark/mariadb-java-client-3.0.6.jar," \
+                         "aws_task3/part2_spark/aws-java-sdk-bundle-1.11.1026.jar," \
+                         "aws_task3/part2_spark/hadoop-aws-3.3.3.jar," \
+                         "aws_task3/part2_spark/hadoop-common-3.3.3.jar "
 
         logging.info('Creating Spark configuration')
         self.conf = SparkConf()
