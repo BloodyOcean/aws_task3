@@ -4,7 +4,7 @@ All theese processess use `crontab` for regular work
 # Installation
 1) Please, copy or download this repository using `wget` or `git copy`
 2) **dont forget to update your apt-get using `sudo apt-get update`**
-3) Make bash script executable using `sudo chmmode +x crontab_start.sh`
+3) Make bash script executable using `sudo chmmod +x crontab_start.sh`
 4) Run bash script using `./crontab_start.sh <path to aws credentials>`
 # Warning
 1) Your machine should have specific aws credentials file for propper work
