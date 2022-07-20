@@ -35,9 +35,9 @@ aws configure
 crontab -l > mycron
 
 #echo new crons into cron file
-echo "20 * * * * /usr/bin/python3 /home/ubuntu/aws_task3-main/part2_spark/main.py >> /tmp/crontab_logs/spark-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
-echo "*/30 * * * * /usr/bin/python3 /home/ubuntu/aws_task3-main/part1_db/main.py --transactions >> /tmp/crontab_logs/transactions-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
-echo "0 * * * * /usr/bin/python3 /home/ubuntu/aws_task3-main/part1_db/main.py --peoplecards 10 >> /tmp/crontab_logs/peoplecards-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
+echo "20 * * * * /usr/bin/python3 /home/ubuntu/aws_task3/part2_spark/main.py >> /tmp/crontab_logs/spark-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
+echo "*/30 * * * * /usr/bin/python3 /home/ubuntu/aws_task3/part1_db/main.py --transactions >> /tmp/crontab_logs/transactions-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
+echo "0 * * * * /usr/bin/python3 /home/ubuntu/aws_task3/part1_db/main.py --peoplecards 10 >> /tmp/crontab_logs/peoplecards-`date +\%Y\%m\%d\%H\%M\%S`.log 2>&1" >> mycron
 
 #install new cron file
 crontab mycron
