@@ -17,7 +17,12 @@ udo apt-get install libmysqlclient-dev
 mkdir /tmp/crontab_logs
 
 #install necessary dependecies
-pip install mimesis,boto3,sqlalchemy,sqlalchemy_utils,pyspark,mysqlclient
+pip install mimesis
+pip install boto3
+pip install sqlalchemy
+pip install sqlalchemy_utils
+pip install pyspark
+pip install mysqlclient
 
 sudo mv $1 .
 
