@@ -81,7 +81,7 @@ class SparkManager:
             .option('fs.s3a.committer.name', 'partitioned') \
             .option('fs.s3a.committer.staging.conflict-mode', 'replace') \
             .option("fs.s3a.fast.upload.buffer", "bytebuffer") \
-            .mode('overwrite') \
+            .mode('append') \
             .save('s3a://task3-data/transactions/res')
 
     def read_cards(self):
@@ -115,7 +115,7 @@ class SparkManager:
         filtered_cards_date_df.write \
             .partitionBy('created_date') \
             .format("parquet") \
-            .mode('overwrite') \
+            .mode('append') \
             .option('fs.s3a.committer.name', 'partitioned') \
             .option('fs.s3a.committer.staging.conflict-mode', 'replace') \
             .option("fs.s3a.fast.upload.buffer", "bytebuffer") \
