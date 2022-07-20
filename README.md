@@ -9,3 +9,4 @@ All theese processess use `crontab` for regular work
 # Warning
 1) Your machine should have specific aws credentials file for propper work
 2) Dont forget to pass path to the credentials before executing script
+3) If you are using zip archive of repository. Please, dont forget to install `unzip` using `sudo apt-get install`
