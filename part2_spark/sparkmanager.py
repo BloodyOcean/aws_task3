@@ -14,7 +14,7 @@ class SparkManager:
         config_helper_db = ConfigReader()
 
         self.jdbc_connection = config_helper_db.get_value_from_s3_bucket('task3-files',
-                                                                         './configs/dbconf.ini',
+                                                                         'configs/dbconf.ini',
                                                                          'DbInfo',
                                                                          'connection_string_jdbc')
 
