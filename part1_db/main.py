@@ -1,11 +1,12 @@
 import logging
-
+from pathlib import Path
 import load
 from entities import DbServer
 from helpers import arguments_parse
 
 FORMAT = '%(asctime)s %(message)s'
-logging.basicConfig(format=FORMAT, filename='app.log')
+working_path = str(Path(__file__).resolve().parent)
+logging.basicConfig(format=FORMAT, filename=working_path+'app.log')
 
 
 def main():
