@@ -1,4 +1,5 @@
 import csv
+from pathlib import Path
 
 
 def read_credentials() -> list:
@@ -9,7 +10,7 @@ def read_credentials() -> list:
     """
 
     working_path = str(Path(__file__).resolve().parent.parent)
-    file = open(working_path)
+    file = open(working_path + '/Administrator_accessKeys.csv')
     csvreader = csv.reader(file)
     header = []
     header = next(csvreader)
