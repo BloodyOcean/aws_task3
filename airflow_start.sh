@@ -14,12 +14,12 @@ sudo apt-get install unzip
 sudo apt-get install libmysqlclient-dev
 
 # Install necessary dependecies
+pip install mysqlclient
 pip install mimesis
 pip install boto3
 pip install sqlalchemy
 pip install sqlalchemy_utils
 pip install pyspark
-pip install mysqlclient
 
 sudo mv $1 .
 
@@ -40,7 +40,7 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # Move dags from repository inside airflow root folder
-sudo mv dags ~/airflow/
+sudo mv dags ~/airflow
 
 # Set-up aws user configuration
 aws configure
