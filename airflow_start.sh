@@ -31,8 +31,6 @@ export AIRFLOW_HOME=~/airflow
 
 export PATH=/home/ubuntu/.local/bin:$PATH
 
-source ~/.bash_profile
-
 # Install Airflow using the constraints file
 AIRFLOW_VERSION="2.3.3"
 PYTHON_VERSION="$(python3 --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
@@ -40,7 +38,11 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # Move dags from repository inside airflow root folder
-sudo mv dags ~/airflow
+#sudo mv dags ~/airflow
+
+sudo mkdir ~/airflow/dags
+
+sudo mv dags/8 ~/airflow/dags
 
 # Set-up aws user configuration
 aws configure
