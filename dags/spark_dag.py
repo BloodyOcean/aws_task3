@@ -6,7 +6,7 @@ from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
 from airflow.operators.python import PythonVirtualenvOperator
 
-PROJECT_PATH = 'python3 /home/ubuntu/task3_cloud/'
+PROJECT_PATH = 'python3 /home/ubuntu/aws_task3/'
 
 default_args = {"owner": "airflow"}
 
