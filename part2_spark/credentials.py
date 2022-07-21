@@ -7,7 +7,9 @@ def read_credentials() -> list:
     for amazon from .csv file
     :return:
     """
-    file = open('/home/ubuntu/aws_task3/Administrator_accessKeys.csv')
+
+    working_path = str(Path(__file__).resolve().parent.parent)
+    file = open(working_path)
     csvreader = csv.reader(file)
     header = []
     header = next(csvreader)
