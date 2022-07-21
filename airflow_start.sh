@@ -42,7 +42,7 @@ pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}
 
 sudo mkdir ~/airflow/dags
 
-sudo mv dags/8 ~/airflow/dags
+sudo mv dags/* ~/airflow/dags
 
 # Set-up aws user configuration
 aws configure
