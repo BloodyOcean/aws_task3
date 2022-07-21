@@ -28,7 +28,6 @@ wget -P ./part2_spark https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-
 # Airflow needs a home. `~/airflow` is the default, but you can put it
 # somewhere else if you prefer (optional)
 export AIRFLOW_HOME=~/airflow
-
 export PATH=/home/ubuntu/.local/bin:$PATH
 
 # Install Airflow using the constraints file
@@ -38,11 +37,8 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 # Move dags from repository inside airflow root folder
-#sudo mv dags ~/airflow
-
-sudo mkdir ~/airflow/dags
-
-sudo mv dags/* ~/airflow/dags
+sudo mkdir $AIRFLOW_HOME/dags
+sudo mv dags/* $AIRFLOW_HOME/dags
 
 # Set-up aws user configuration
 aws configure
