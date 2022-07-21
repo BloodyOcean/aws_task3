@@ -36,16 +36,26 @@ PYTHON_VERSION="$(python3 --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
 CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
-# Move dags from repository inside airflow root folder
-sudo mkdir $AIRFLOW_HOME/dags
-sudo mv dags/* $AIRFLOW_HOME/dags
-
 # Set-up aws user configuration
 aws configure
 
 # The Standalone command will initialise the database, make a user,
 # and start all components for you.
-airflow standalone
+airflow db init
+
+# Move dags from repository inside airflow root folder
+sudo mkdir $AIRFLOW_HOME/dags
+sudo mv dags/* $AIRFLOW_HOME/dags
+
+airflow users create \
+    --username admin \
+    --firstname Peter \
+    --lastname Parker \
+    --role Admin \
+    --email spiderman@superhero.org
+
+airflow scheduler -D
+airflow webserver
 
 # Visit localhost:8080 in the browser and use the admin account details
 # shown on the terminal to login.
