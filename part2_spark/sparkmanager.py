@@ -4,7 +4,8 @@ import credentials
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import to_date
-
+import os
+from pathlib import Path
 from helpers import ConfigReader
 
 
@@ -18,10 +19,12 @@ class SparkManager:
                                                                          'DbInfo',
                                                                          'connection_string_jdbc')
 
-        self.connector = "part2_spark/mariadb-java-client-3.0.6.jar," \
-                         "part2_spark/aws-java-sdk-bundle-1.11.1026.jar," \
-                         "part2_spark/hadoop-aws-3.3.3.jar," \
-                         "part2_spark/hadoop-common-3.3.3.jar "
+        working_path = str(Path(__file__).resolve().parent)
+
+        self.connector = (working_path + "/mariadb-java-client-3.0.6.jar," +
+                         working_path + "/aws-java-sdk-bundle-1.11.1026.jar," +
+                         working_path + "/hadoop-aws-3.3.3.jar," +
+                         working_path + "/hadoop-common-3.3.3.jar")
 
         logging.info('Creating Spark configuration')
         self.conf = SparkConf()
