@@ -12,7 +12,6 @@ def read_args():
 def main():
     arguments = read_args()
     snsclient = client.Client()
-    snsclient.subscribe(['cchugaister@gmail.com', 'bataricet@gmail.com'])
 
     if arguments.msg is not None:
         snsclient.notificate_all(str(arguments.msg))
