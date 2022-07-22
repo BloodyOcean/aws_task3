@@ -14,7 +14,7 @@ def notify(context):
 
 
 with DAG(
-    dag_id="people_cards_dag_not",
+    dag_id="spark_dag_not",
     default_args=default_args,
     schedule_interval='20 * * * *',
     start_date=days_ago(2),

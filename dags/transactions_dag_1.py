@@ -13,7 +13,7 @@ def notify(context):
 
 
 with DAG(
-    dag_id="people_cards_dag_not",
+    dag_id="transactions_dag_not",
     default_args=default_args,
     schedule_interval='*/30 * * * *',
     start_date=days_ago(2),
