@@ -1,10 +1,9 @@
 import os
-from airflow import DAG
-from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
 from airflow.decorators import dag, task
 from airflow.utils.dates import days_ago
-from airflow.operators.python import PythonVirtualenvOperator
+from airflow.utils.trigger_rule import TriggerRule
+
 
 PROJECT_PATH = 'python3 /home/ubuntu/aws_task3/'
 
@@ -29,9 +28,16 @@ def my_dag_dag():
         import os
         os.system(PROJECT_PATH + 'part1_db/main.py --transactions')
 
+    @task(
+        trigger_rule=TriggerRule.ALL_FAILED
+    )
+    def notify():
+        import os
+        os.system(PROJECT_PATH + 'part3_sns/main.py --mes Your transactions DAG throwed some error.')
+
 
     create_db()
     gen_transactions()
-
+    notify()
 
 mydag = my_dag_dag()
