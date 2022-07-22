@@ -38,6 +38,5 @@ def my_dag_dag():
 
     create_db()
     gen_transactions()
-    notify()
 
 mydag = my_dag_dag()

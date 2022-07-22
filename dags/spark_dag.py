@@ -36,7 +36,6 @@ def my_dag_dag():
 
     create_db()
     run_spark()
-    notify()
 
 
 mydag = my_dag_dag()

@@ -37,7 +37,6 @@ def my_dag_dag():
 
     create_db()
     gen_people_cards()
-    notify
 
 
 mydag = my_dag_dag()
