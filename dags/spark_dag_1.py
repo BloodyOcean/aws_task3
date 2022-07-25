@@ -23,10 +23,10 @@ with DAG(
 ) as dag:
 
     def create_db():
-        subprocess.run(['python3', '~/aws_task3/part1_db/main.py', '--create'], check=True)
+        subprocess.run(['python3', '/home/ubuntu/aws_task3/part1_db/main.py', '--create'], check=True)
 
     def run_spark():
-        subprocess.run(['python3', '~/aws_task3/part2_spark/main.py'], check=True)
+        subprocess.run(['python3', '/home/ubuntu/aws_task3/part2_spark/main.py'], check=True)
 
     create_database = PythonOperator(
         task_id='create_db',
