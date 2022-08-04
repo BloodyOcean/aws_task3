@@ -16,6 +16,7 @@ def notify(context):
 
 
 with DAG(
+    catchup=False,
     dag_id="people_cards_dag_not",
     default_args={'on_failure_callback':notify},
     schedule_interval='0 * * * *',
